@@ -19,6 +19,7 @@ GEM
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
+    rake (12.3.2)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -42,9 +43,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rake
   rspec (~> 3.7)
   shoulda-matchers (~> 3.1)
   vindicate!
 
 BUNDLED WITH
-   1.16.2
+   1.17.2
