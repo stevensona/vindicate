@@ -4,4 +4,4 @@ test:
   stage: test
   script:
   - bundle install --path /cache
-  - bundle exec rake test
+  - bundle exec rake
