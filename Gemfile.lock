@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    vindicate (0.1.1)
+    vindicate (0.1.2)
       activemodel
 
 GEM
