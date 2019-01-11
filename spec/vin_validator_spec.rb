@@ -41,4 +41,8 @@ describe VinValidator, type: :model do
     it { should_not allow_value('1GNEC13XX5J176026').for(:number) }
   end
 
+  context 'when VIN is null' do
+    it { should allow_value(nil).for(:number) }
+  end
+
 end

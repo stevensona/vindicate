@@ -2,6 +2,7 @@ class VinValidator < ActiveModel::EachValidator
   VALID_CHARS = /[A-HJ-NPR-Z0-9]{17}/i
 
   def validate_each(record, attribute, value)
+    return if value.nil?
     if value.length < 17
       record.errors[attribute] << 'is too short'
       return
