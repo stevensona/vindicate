@@ -45,4 +45,13 @@ describe VinValidator, type: :model do
     it { should allow_value(nil).for(:number) }
   end
 
+  context 'when VIN is empty string' do
+    it { should allow_value('').for(:number) }
+  end
+
+  context 'when VIN is a number' do
+    it { should_not allow_value(12).for(:number) }
+  end
+
+
 end
