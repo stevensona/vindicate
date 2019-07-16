@@ -1,5 +1,4 @@
 # Vindicate
-![Build Status](http://git.ajrintl.com/astevenson/vindicate/badges/master/build.svg)
 
 Provides Vehicle Identification Number (VIN) number format for ActiveModel. Checks length, characters, and checksum calculation.
 
