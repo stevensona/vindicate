@@ -1,16 +1,13 @@
 require 'spec_helper'
 
 describe VinValidator, type: :model do
-
-  let(:klass) do
-    Class.new do
-      include ActiveModel::Validations
-      attr_accessor :number, :model
-      validates :number, vin: true
-    end
+  Klass = Class.new do
+    include ActiveModel::Validations
+    attr_accessor :number, :model
+    validates :number, vin: true
   end
 
-  subject { klass.new }
+  subject { Klass.new }
 
   context 'when VIN number is valid' do
     it { should allow_value('1GT424C80BF201935').for(:number) }
