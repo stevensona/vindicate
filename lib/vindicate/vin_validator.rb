@@ -4,22 +4,22 @@ class VinValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     return if value.blank?
     unless value.respond_to?(:length)
-      record.errors[attribute] << 'is invalid'
-      return 
+      record.errors.add(attribute, :invalid, message: 'is invalid')
+      return
     end
     if value.length < 17
-      record.errors[attribute] << 'is too short'
+      record.errors.add(attribute, :invalid, message: 'is too short')
       return
     end
     if value.length > 17
-      record.errors[attribute] << 'is too long'
+      record.errors.add(attribute, :invalid, message: 'is too long')
       return
     end
     unless value =~ VALID_CHARS
-      record.errors[attribute] << 'contains invalid characters'
+      record.errors.add(attribute, :invalid, message: 'contains invalid characters')
       return
     end
-    record.errors[attribute] << 'is invalid' unless valid?(value)
+    record.errors.add(attribute, :invalid, message: 'is invalid') unless valid?(value)
   end
 
   private
